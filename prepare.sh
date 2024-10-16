@@ -11,7 +11,7 @@ PYTORCH3D_NO_NINJA=1 FORCE_CUDA=1 pip install git+https://github.com/facebookres
 cd PoseEstimation/third_party/kaolin && FORCE_CUDA=1 python setup.py develop && cd ../..
 
 # Install FoundationPose
-cd PoseEstimation/third_party/FoundationPose/mycpp
+cd third_party/FoundationPose/mycpp
 mkdir build && cd build && cmake .. && make -j 6 # build the cpp extension
 cd ../../bundlesdf/mycuda && \ # build the cuda extension
     EIGEN_INCLUDE=/usr/local/include/eigen3 \

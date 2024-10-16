@@ -16,4 +16,4 @@ mkdir build && cd build && cmake .. && make -j 6 # build the cpp extension
 cd ../../bundlesdf/mycuda && \ EIGEN_INCLUDE=/usr/local/include/eigen3 CMAKE_PREFIX_PATH=/usr/local/lib/python3.8/dist-packages/pybind11/share/cmake/pybind11:/usr/local/include/eigen3 pip install -e . --user && cd ../..
 gdown 1jBx_FcI00Jb6k2DkgwF8eilkQsZZWoZp && unzip foundation_pose_ckpt.zip && rm foundation_pose_ckpt.zip
 gdown 1f8pi8w3dopXHya3PfmM1DykgqC4AGkkO && unzip foundation_pose_demo_data.zip && rm foundation_pose_demo_data.zip
-cd ../../../PoseEstimation && pip install -e . --user && cd ..
+cd ../.. && pip install -e . --user && cd ..

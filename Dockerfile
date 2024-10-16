@@ -133,24 +133,24 @@ ENV FORCE_CUDA="1" TORCH_CUDA_ARCH_LIST="6.1;7.0;7.5;8.0;8.6;8.9+PTX"
 ########### WORKSPACE BUILD ############
 ########################################
 # Installing catkin package
-RUN mkdir -p ~/catkin_ws/src
 RUN rosdep init && rosdep update && apt update
+RUN mkdir -p ~/catkin_ws/src
 RUN git clone https://github.com/ojh6404/pose-ros.git ~/catkin_ws/src/pose-ros
 RUN source /opt/ros/noetic/setup.bash && \
     cd ~/catkin_ws/src/pose-ros && \
     rosdep install --from-paths . -i -r -y
 RUN cd ~/catkin_ws/src/pose-ros && ./prepare.sh
-# RUN cd ~/catkin_ws && catkin init && catkin build &&\
-#     rm -rf ~/.cache/pip
+RUN cd ~/catkin_ws && catkin init && catkin build &&\
+    rm -rf ~/.cache/pip
 
 # # to avoid conflcit when mounting
-# # RUN rm -rf ~/catkin_ws/src/pose-ros/launch
-# # RUN rm -rf ~/catkin_ws/src/pose-ros/node_scripts
+RUN rm -rf ~/catkin_ws/src/pose-ros/launch
+RUN rm -rf ~/catkin_ws/src/pose-ros/node_scripts
 
 # ########################################
 # ########### ENV VARIABLE STUFF #########
 # ########################################
-# RUN touch ~/.bashrc
-# RUN echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+RUN touch ~/.bashrc
+RUN echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 # CMD ["bash"]

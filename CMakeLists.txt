@@ -23,17 +23,17 @@ catkin_generate_virtualenv(
 # catkin_install_python(
 #   PROGRAMS ${SCRIPT_PROGRAMS}
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/scripts/)
-file(GLOB SCRIPTS_FILES node_scripts/*.py)
-catkin_install_python(
-  PROGRAMS ${SCRIPTS_FILES}
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# file(GLOB SCRIPTS_FILES node_scripts/*.py)
+# catkin_install_python(
+#   PROGRAMS ${SCRIPTS_FILES}
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 
-install(FILES
-  requirements.txt
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+# install(FILES
+#   requirements.txt
+#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+# )
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
